@@ -1,0 +1,64 @@
+﻿@model List<GoyalEMS_MVC.Models.DepartmentModel> 
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <form method="post" action="/Department/Save">
+        <div>
+            <table>
+                <tr>
+                    <td>Department Code</td>
+                    <td>
+                        <input type="text" name="DepartmentCode"
+                               id="txtDepartmentCode" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Department Name</td>
+                    <td>
+                        <input type="text" name="DepartmentName"
+                               id="txtDepartmentName" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="Save" />
+                    </td>
+                    <td>
+                        <input type="reset" value="Clear" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <br />
+        <hr />
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Depattment Code</th>
+                        <th>Depattment Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>@item.DepartmentCode</td>
+                        <td>@item.DepartmentName</td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </form>
+   
+</body>
+</html>
