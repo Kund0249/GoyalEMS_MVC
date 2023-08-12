@@ -9,6 +9,7 @@ namespace GoyalEMS_MVC.Controllers
 {
     public class DepartmentController : Controller
     {
+        //test
         DepartmentRepository repo = new DepartmentRepository();
         [HttpGet]
         public ViewResult Index()
