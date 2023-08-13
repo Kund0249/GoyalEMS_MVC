@@ -10,11 +10,11 @@ namespace GoyalEMS_MVC.Controllers
     public class DepartmentController : Controller
     {
         //test
-        DepartmentRepository repo = new DepartmentRepository();
+        DepartmentProcessor processor = new DepartmentProcessor();
         [HttpGet]
         public ViewResult Index()
         {
-            List<DepartmentModel> departments = repo.GetDepartments;
+            List<DepartmentModel> departments = processor.GetDepartments;
             return View(departments);
         }
 
@@ -27,7 +27,27 @@ namespace GoyalEMS_MVC.Controllers
         [HttpPost]
         public RedirectToRouteResult Save(DepartmentModel model)
         {
-            repo.Save(model);
+            
+            processor.Save(model);
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            DepartmentModel model = processor.GetDepartment(id);
+            if(model != null)
+            {
+                return View(model);
+            }
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public ActionResult Edit(DepartmentModel model)
+        {
+            processor.Update(model);
             return RedirectToAction("Index");
         }
     }

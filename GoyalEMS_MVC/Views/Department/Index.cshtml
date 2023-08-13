@@ -6,45 +6,54 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
     <title>Index</title>
 </head>
 <body>
     <form method="post" action="/Department/Save">
-        <div>
-            <table>
-                <tr>
-                    <td>Department Code</td>
-                    <td>
-                        <input type="text" name="DepartmentCode"
-                               id="txtDepartmentCode" />
-                    </td>
-                </tr>
-                <tr>
-                    <td>Department Name</td>
-                    <td>
-                        <input type="text" name="DepartmentName"
-                               id="txtDepartmentName" />
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="submit" value="Save" />
-                    </td>
-                    <td>
-                        <input type="reset" value="Clear" />
-                    </td>
-                </tr>
-            </table>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-6 offset-3">
+                    <table class="table">
+                        <tr>
+                            <td>Department Code</td>
+                            <td>
+                                <input type="text" name="DepartmentCode"
+                                       id="txtDepartmentCode" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Department Name</td>
+                            <td>
+                                <input type="text" name="DepartmentName"
+                                       id="txtDepartmentName" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="submit" value="Save" 
+                                       class="btn btn-success"/>
+                            </td>
+                            <td>
+                                <input type="reset" value="Clear"
+                                       class="btn btn-danger"/>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+          
         </div>
 
         <br />
         <hr />
-        <div>
-            <table>
+        <div class="col-6 offset-3">
+            <table class="table">
                 <thead>
                     <tr>
                         <th>Depattment Code</th>
                         <th>Depattment Name</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -53,6 +62,9 @@
                     <tr>
                         <td>@item.DepartmentCode</td>
                         <td>@item.DepartmentName</td>
+                        <td>
+                            <a href="/Department/Edit/@item.DepartmentId" class="btn btn-sm btn-primary">Edit</a>
+                        </td>
                     </tr>
                     }
                 </tbody>
