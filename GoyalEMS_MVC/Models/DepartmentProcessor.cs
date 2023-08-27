@@ -24,7 +24,11 @@ namespace GoyalEMS_MVC.Models
 
         public DepartmentModel GetDepartment(int Id)
         {
-            return DepartmentModel.Convert(repo.GetDepartment(Id));
+            var data = repo.GetDepartment(Id);
+            if(data != null)
+             return DepartmentModel.Convert(data);
+
+            return null;
         }
         public void Save(DepartmentModel model)
         {

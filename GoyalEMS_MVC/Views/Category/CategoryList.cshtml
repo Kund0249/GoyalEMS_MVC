@@ -1,0 +1,50 @@
+﻿@model List<GoyalEMS_MVC.Models.DepartmentModel>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+    <title>CategoryList</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-6 offset-3">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Category Id</th>
+                            <th>Category Code</th>
+                            <th>Ctaegory Name</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.DepartmentId</td>
+                                <td>@item.DepartmentCode</td>
+                                <td>@item.DepartmentName</td>
+                                <td>
+                                    @*@Html.ActionLink("Modify", "Edit", new { id = item.DepartmentId })
+        @Html.ActionLink("Remove", "Delete", new { id = item.DepartmentId })*@
+                                    @using (Html.BeginForm("Delete", "Category", new { id = item.DepartmentId }, FormMethod.Post))
+                                    {
+                                        @Html.ActionLink("Modify", "Edit", new { id = item.DepartmentId },new {@class = "btn btn-primary" })
+                                        <input type="submit" value="Remove" 
+                                               onclick="return confirm('Are you sure? want to delete this record permanently.')"
+                                               class="btn btn-danger" />
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

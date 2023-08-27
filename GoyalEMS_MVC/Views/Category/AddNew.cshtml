@@ -1,0 +1,48 @@
+﻿@model GoyalEMS_MVC.Models.DepartmentModel 
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+    <title>AddNew</title>
+</head>
+<body>
+    <div class="container-fluid"> 
+        <div class="row">
+            <div class="col-6 offset-3">
+                <form method="post">
+                    <table class="table">
+                        <tr>
+                            <th>Department Code</th>
+                            <td>
+                                @*<input type="text" name="DepartmentCode" />*@
+                                @*@Html.TextBox("DepartmentCode")*@
+                                @Html.TextBoxFor(x => x.DepartmentCode)
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Department Name</th>
+                            <td>
+                                @*<input type="text" name="DepartmentName" />*@
+                                @*@Html.TextBox("DepartmentName")*@
+                                @Html.TextBoxFor(y => y.DepartmentName)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="submit" value="Save" class="btn btn-primary" />
+                            </td>
+                            <td>
+                                <input type="reset" value="Reset" class="btn btn-danger" />
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+              
+            </div>
+        </div>
+    </div>
+</body>
+</html>
