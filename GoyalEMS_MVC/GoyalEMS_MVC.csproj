@@ -104,6 +104,8 @@
     </Compile>
     <Compile Include="Models\DepartmentModel.cs" />
     <Compile Include="Models\DepartmentProcessor.cs" />
+    <Compile Include="Models\EmployeeDataProcessor.cs" />
+    <Compile Include="Models\EmployeeModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -117,6 +119,7 @@
     <Content Include="Views\Category\CategoryList.cshtml" />
     <Content Include="Views\Category\AddNew.cshtml" />
     <Content Include="Views\Category\Edit.cshtml" />
+    <Content Include="Views\Employee\Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -126,7 +129,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Employee\" />
+    <Folder Include="ProfilePictures\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataLayer\DataLayer.csproj">

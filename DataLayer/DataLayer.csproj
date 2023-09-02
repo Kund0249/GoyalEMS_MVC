@@ -43,7 +43,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataEntity\DepartmentEntity.cs" />
+    <Compile Include="DataEntity\EmployeeEntity.cs" />
     <Compile Include="DataRepository\DepartmentRepository.cs" />
+    <Compile Include="DataRepository\EmployeeRepository.cs" />
     <Compile Include="DBContext\DBEmployee.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
