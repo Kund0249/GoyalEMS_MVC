@@ -26,5 +26,11 @@ namespace GoyalEMS_MVC.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult Method1()
+        {
+            return View();
+        }
+
+
     }
 }

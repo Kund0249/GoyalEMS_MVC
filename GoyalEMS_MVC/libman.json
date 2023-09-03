@@ -9,6 +9,22 @@
         "js/bootstrap.min.js",
         "css/bootstrap.css"
       ]
+    },
+    {
+      "library": "jquery@3.7.1",
+      "destination": "lib/jquery/",
+      "files": [
+        "jquery.js",
+        "jquery.min.js"
+      ]
+    },
+    {
+      "library": "toastr.js@2.1.4",
+      "destination": "lib/toastr/",
+      "files": [
+        "toastr.css",
+        "toastr.min.js"
+      ]
     }
   ]
 }

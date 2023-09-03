@@ -27,8 +27,9 @@ namespace GoyalEMS_MVC.Controllers
         [HttpPost]
         public RedirectToRouteResult Save(DepartmentModel model)
         {
-            
+           
             processor.Save(model);
+            TempData["Message"] = "Record Created!";
             return RedirectToAction("Index");
         }
 

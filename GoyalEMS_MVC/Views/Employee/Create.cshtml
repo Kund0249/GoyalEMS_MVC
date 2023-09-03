@@ -1,101 +1,91 @@
 ﻿@model GoyalEMS_MVC.Models.EmployeeModel
+
 @{
-    Layout = null;
+    ViewBag.Title = "Employee";
 }
+<div class="container-fluid">
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Add Employee</title>
-    <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
-</head>
-<body>
-    <div class="container-fluid">
-
-        @*<div>
+    @*<div>
             <img src="../ProfilePictures/daad39e8-f405-4907-b3a3-e2a7823579c5_B.png"  class="img-thumbnail" style="width : 100px; height:100px;"/>
         </div>*@
-        
-        @using(Html.BeginForm("Create","Employee",FormMethod.Post,new {enctype = "multipart/form-data"}))
-        {
-            <div class="row">
-                <div class="col-6 offset-3">
-                    <table class="table">
-                        <tr>
-                            <th>Employee Name</th>
-                            <td>
-                                @Html.TextBoxFor(x => x.EmpName, new { @class = "form-control" })
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Gender</th>
-                            <td>
-                                <span>
-                                    <label>Male</label>
-                                    @Html.RadioButtonFor(x => x.Gender, "M")
-                                </span>
-                                <span>
-                                    <label>Female</label>
-                                    @Html.RadioButtonFor(x => x.Gender, "F")
-                                </span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Email Address</th>
-                            <td>
-                                @Html.TextBoxFor(x => x.EmailId, new { @class = "form-control" })
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Employee Salary</th>
-                            <td>
-                                @Html.TextBoxFor(x => x.Salary, new { @class = "form-control" })
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Date of Birth</th>
-                            <td>
 
-                                @Html.TextBoxFor(x => x.DOB, new { @class = "form-control", type = "date" })
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Date of Joining</th>
-                            <td>
+    @using (Html.BeginForm("Create", "Employee", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div class="row">
+            <div class="col-6 offset-3">
+                <table class="table">
+                    <tr>
+                        <th>Employee Name</th>
+                        <td>
+                            @Html.TextBoxFor(x => x.EmpName, new { @class = "form-control" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Gender</th>
+                        <td>
+                            <span>
+                                <label>Male</label>
+                                @Html.RadioButtonFor(x => x.Gender, "M")
+                            </span>
+                            <span>
+                                <label>Female</label>
+                                @Html.RadioButtonFor(x => x.Gender, "F")
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Email Address</th>
+                        <td>
+                            @Html.TextBoxFor(x => x.EmailId, new { @class = "form-control" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Employee Salary</th>
+                        <td>
+                            @Html.TextBoxFor(x => x.Salary, new { @class = "form-control" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Date of Birth</th>
+                        <td>
 
-                                @Html.TextBoxFor(x => x.DOJ, new { @class = "form-control", type = "date" })
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Select Department</th>
-                            <td>
-                                @Html.DropDownListFor(x => x.DepartmentId, new List<SelectListItem>()
-                                   {
-                                  new SelectListItem(){Text="Information Tech",Value="128"},
-                                  new SelectListItem(){Text="Human Resources",Value="129"},
-                                  new SelectListItem(){Text="Finance & Account",Value="130"}
-                                   }, "Select",
-                                   new { @class = "form-control" }
-                                  )
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Profile Image</th>
-                            <td>
+                            @Html.TextBoxFor(x => x.DOB, new { @class = "form-control", type = "date" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Date of Joining</th>
+                        <td>
 
-                                @Html.TextBoxFor(x => x.ProfileImage, new { @class = "form-control", type = "file" })
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><input type="submit" value="Save" class="btn btn-primary" /></td>
-                            <td><input type="reset" value="Reset" class="btn btn-danger" /></td>
-                        </tr>
-                    </table>
-                </div>
+                            @Html.TextBoxFor(x => x.DOJ, new { @class = "form-control", type = "date" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Select Department</th>
+                        <td>
+                            @Html.DropDownListFor(x => x.DepartmentId, new List<SelectListItem>()
+                               {
+                              new SelectListItem(){Text="Information Tech",Value="128"},
+                              new SelectListItem(){Text="Human Resources",Value="129"},
+                              new SelectListItem(){Text="Finance & Account",Value="130"}
+                               }, "Select",
+                               new { @class = "form-control" }
+                              )
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Profile Image</th>
+                        <td>
+
+                            @Html.TextBoxFor(x => x.ProfileImage, new { @class = "form-control", type = "file" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="submit" value="Save" class="btn btn-primary" /></td>
+                        <td><input type="reset" value="Reset" class="btn btn-danger" /></td>
+                    </tr>
+                </table>
             </div>
-        }
-    </div>
-</body>
-</html>
+        </div>
+    }
+</div>
+
