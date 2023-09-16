@@ -34,5 +34,21 @@ namespace GoyalEMS_MVC.Models
                 EmpCode = model.EmpCode
             };
         }
+
+        public static EmployeeModel Convert(EmployeeEntity model)
+        {
+            return new EmployeeModel()
+            {
+                EmpName = model.EmpName,
+                DOB = model.DOB,
+                DOJ = model.DOJ,
+                DepartmentId = model.DepartmentId,
+                EmailId = model.EmailId,
+                Gender = model.Gender,
+                ProfileImagePath = model.ProfileImagePath,
+                Salary = model.Salary,
+                EmpCode = model.EmpCode
+            };
+        }
     }
 }

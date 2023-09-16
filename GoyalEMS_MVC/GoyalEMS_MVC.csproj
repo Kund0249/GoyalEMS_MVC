@@ -127,6 +127,8 @@
     <Content Include="Views\Shared\_EMSLayout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_EMSDarkLayout.cshtml" />
+    <Content Include="Views\Practice\TestIndex.cshtml" />
+    <Content Include="Views\Employee\EmployeeList.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
