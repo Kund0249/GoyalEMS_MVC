@@ -31,16 +31,20 @@ namespace GoyalEMS_MVC.Controllers
         [HttpPost]
         public ActionResult Create(EmployeeModel model)
         {
-            if (model.ProfileImage != null)
+            if (ModelState.IsValid)
             {
-                string FolderPath = Server.MapPath("~/ProfilePictures");
-                string guidId = Guid.NewGuid().ToString();
-                string FileName = guidId + "_" + model.ProfileImage.FileName;
-                string filepath = System.IO.Path.Combine(FolderPath, FileName);
-                model.ProfileImage.SaveAs(filepath);
-                model.ProfileImagePath = "/ProfilePictures/" + FileName;
+                if (model.ProfileImage != null)
+                {
+                    string FolderPath = Server.MapPath("~/ProfilePictures");
+                    string guidId = Guid.NewGuid().ToString();
+                    string FileName = guidId + "_" + model.ProfileImage.FileName;
+                    string filepath = System.IO.Path.Combine(FolderPath, FileName);
+                    model.ProfileImage.SaveAs(filepath);
+                    model.ProfileImagePath = "/ProfilePictures/" + FileName;
+                }
+                processor.Save(model);
             }
-            processor.Save(model);
+           
             return View();
         }
     }

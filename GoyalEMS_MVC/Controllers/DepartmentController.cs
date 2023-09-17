@@ -25,19 +25,22 @@ namespace GoyalEMS_MVC.Controllers
         //}
 
         [HttpPost]
-        public RedirectToRouteResult Save(DepartmentModel model)
+        public ActionResult Save(DepartmentModel model)
         {
-           
-            processor.Save(model);
-            TempData["Message"] = "Record Created!";
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                processor.Save(model);
+                TempData["Message"] = "Record Created!";
+                return RedirectToAction("Index");
+            }
+            return View("Index",new List<DepartmentModel>());
         }
 
         [HttpGet]
         public ActionResult Edit(int id)
         {
             DepartmentModel model = processor.GetDepartment(id);
-            if(model != null)
+            if (model != null)
             {
                 return View(model);
             }

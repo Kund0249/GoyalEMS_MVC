@@ -18,6 +18,7 @@
                         <th>Employee Name</th>
                         <td>
                             @Html.TextBoxFor(x => x.EmpName, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(x => x.EmpName, "", new { @class = "text-danger" })
                         </td>
                     </tr>
                     <tr>
@@ -31,18 +32,21 @@
                                 <label>Female</label>
                                 @Html.RadioButtonFor(x => x.Gender, "F")
                             </span>
+                            @Html.ValidationMessageFor(x => x.Gender, "", new { @class = "text-danger" })
                         </td>
                     </tr>
                     <tr>
                         <th>Email Address</th>
                         <td>
                             @Html.TextBoxFor(x => x.EmailId, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(x => x.EmailId, "", new { @class = "text-danger" })
                         </td>
                     </tr>
                     <tr>
                         <th>Employee Salary</th>
                         <td>
                             @Html.TextBoxFor(x => x.Salary, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(x => x.Salary, "", new { @class = "text-danger" })
                         </td>
                     </tr>
                     <tr>
@@ -50,6 +54,7 @@
                         <td>
 
                             @Html.TextBoxFor(x => x.DOB, new { @class = "form-control", type = "date" })
+                            @Html.ValidationMessageFor(x => x.DOB, "", new { @class = "text-danger" })
                         </td>
                     </tr>
                     <tr>
@@ -57,6 +62,7 @@
                         <td>
 
                             @Html.TextBoxFor(x => x.DOJ, new { @class = "form-control", type = "date" })
+                            @Html.ValidationMessageFor(x => x.DOJ, "", new { @class = "text-danger" })
                         </td>
                     </tr>
                     <tr>
@@ -70,6 +76,7 @@
                                }, "Select",
                                new { @class = "form-control" }
                               )
+                            @Html.ValidationMessageFor(x => x.DepartmentId, "", new { @class = "text-danger" })
                         </td>
                     </tr>
                     <tr>
@@ -77,6 +84,7 @@
                         <td>
 
                             @Html.TextBoxFor(x => x.ProfileImage, new { @class = "form-control", type = "file" })
+                            @Html.ValidationMessageFor(x => x.ProfileImage, "", new { @class = "text-danger" })
                         </td>
                     </tr>
                     <tr>
@@ -89,3 +97,9 @@
     }
 </div>
 
+
+@section Script{
+    <script src="~/Scripts/jquery-1.8.0.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+}
