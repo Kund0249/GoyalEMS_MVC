@@ -14,6 +14,7 @@ namespace GoyalEMS_MVC.Controllers
         [HttpGet]
         public ViewResult Index()
         {
+            throw new Exception("null reference object");
             List<DepartmentModel> departments = processor.GetDepartments;
             return View(departments);
         }
@@ -51,8 +52,13 @@ namespace GoyalEMS_MVC.Controllers
         [HttpPost]
         public ActionResult Edit(DepartmentModel model)
         {
-            processor.Update(model);
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                processor.Update(model);
+                return RedirectToAction("Index");
+            }
+            ViewBag.Title = "Edit Department";
+            return View(model);
         }
     }
 }

@@ -108,6 +108,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\DashBoardController.cs" />
     <Compile Include="Controllers\DepartmentController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\PracticeController.cs" />
@@ -117,7 +118,9 @@
     <Compile Include="Models\DepartmentModel.cs" />
     <Compile Include="Models\DepartmentProcessor.cs" />
     <Compile Include="Models\EmployeeDataProcessor.cs" />
+    <Compile Include="Models\EmployeeFilterModel.cs" />
     <Compile Include="Models\EmployeeModel.cs" />
+    <Compile Include="Models\EmployeeWrapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -137,6 +140,11 @@
     <Content Include="Views\Shared\_EMSDarkLayout.cshtml" />
     <Content Include="Views\Practice\TestIndex.cshtml" />
     <Content Include="Views\Employee\EmployeeList.cshtml" />
+    <Content Include="Views\DashBoard\Index.cshtml" />
+    <Content Include="Views\DashBoard\_SalesView.cshtml" />
+    <Content Include="Views\DashBoard\Customer.cshtml" />
+    <Content Include="Views\DashBoard\_DepartmentView.cshtml" />
+    <Content Include="Views\Shared\_error.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

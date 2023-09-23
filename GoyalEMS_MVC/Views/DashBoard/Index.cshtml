@@ -1,0 +1,32 @@
+﻿@model List<GoyalEMS_MVC.Models.DepartmentModel>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <div class="card">
+            <div class="card-body">
+                <h1 class="text-center">This is the top of Dashboard</h1>
+            </div>
+        </div>
+        <hr />
+        @Html.Partial("_SalesView")
+        <hr />
+        @Html.Partial("Customer")
+        <hr />
+        @Html.Partial("_DepartmentView",Model)
+        <hr />
+        <footer>
+            <h1>This is the page footer</h1>
+        </footer>
+    </div>
+</body>
+</html>

@@ -11,13 +11,17 @@ namespace GoyalEMS_MVC.Controllers
     {
         EmployeeDataProcessor processor = new EmployeeDataProcessor();
 
-        public ActionResult EmployeeList(int EmpCode = 0, string Email = null)
+        public ActionResult EmployeeList(EmployeeFilterModel filterModel,int? PageNumber)
         {
-            return View(processor.GetEmployees(EmpCode, Email));
+            EmployeeWrapper wrapper = new EmployeeWrapper();
+            wrapper.Employees = processor.GetEmployees(filterModel.EmpCode, filterModel.Email).Skip(((PageNumber ?? 1) - 1) * wrapper.PageSize).Take(wrapper.PageSize).ToList();
+            wrapper.PageNumber = (PageNumber ?? 1);
+            wrapper.TotalPages = processor.GetEmployees(filterModel.EmpCode, filterModel.Email).Count();
+            return View(wrapper);
         }
 
         [HttpPost]
-        public ActionResult FilteredEmployee(int EmployeeCode, string EmployeeEmail)
+        public ActionResult FilteredEmployee(int EmployeeCode = 0, string EmployeeEmail = null)
         {
             return RedirectToAction("EmployeeList", new { EmpCode = EmployeeCode, Email = EmployeeEmail });
         }
@@ -44,7 +48,7 @@ namespace GoyalEMS_MVC.Controllers
                 }
                 processor.Save(model);
             }
-           
+
             return View();
         }
     }

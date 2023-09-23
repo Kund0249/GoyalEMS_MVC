@@ -1,0 +1,29 @@
+﻿@model List<GoyalEMS_MVC.Models.DepartmentModel>
+
+
+<div class="col-6 offset-3 table-responsive" style="height:150px; overflow:auto;">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Depattment Code</th>
+                <th>Depattment Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.DepartmentCode</td>
+                    <td>@item.DepartmentName</td>
+                    <td>
+                        <a href="/Department/Edit/@item.DepartmentId" class="btn btn-sm btn-primary">Edit</a>
+                    </td>
+                </tr>
+            }
+
+
+        </tbody>
+    </table>
+</div>
