@@ -1,0 +1,32 @@
+﻿@model GoyalEMS_MVC.Models.AppUser
+
+    <div class="container-fluid">
+        @using (Html.BeginForm("Login","Login",FormMethod.Post)) { 
+            <div class="row mt-5">
+                <div class="col-4 offset-4">
+                    <span class="text-danger mb-3">
+                        @ViewBag.ErrorMessage
+                    </span>
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>APP Login</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <label>User Name</label>
+                                @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
+                            </div>
+                            <div class="row">
+                                <label>Password</label>
+                                @Html.PasswordFor(x => x.Password, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <input type="submit" value="SigIn" class="btn btn-outline-primary" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+

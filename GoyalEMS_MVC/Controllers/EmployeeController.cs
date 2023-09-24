@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace GoyalEMS_MVC.Controllers
 {
+    //[Authorize]
     public class EmployeeController : Controller
     {
         EmployeeDataProcessor processor = new EmployeeDataProcessor();
@@ -26,6 +27,7 @@ namespace GoyalEMS_MVC.Controllers
             return RedirectToAction("EmployeeList", new { EmpCode = EmployeeCode, Email = EmployeeEmail });
         }
 
+       
         [HttpGet]
         public ActionResult Create()
         {

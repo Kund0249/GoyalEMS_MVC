@@ -14,7 +14,7 @@ namespace GoyalEMS_MVC.Controllers
         [HttpGet]
         public ViewResult Index()
         {
-            throw new Exception("null reference object");
+            ///throw new Exception("null reference object");
             List<DepartmentModel> departments = processor.GetDepartments;
             return View(departments);
         }
